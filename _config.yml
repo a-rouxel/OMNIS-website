@@ -1,6 +1,9 @@
 title: OMNIS
 description: Optical Mesoscale Neural Interrogation System
-theme: just-the-docs
+remote_theme: just-the-docs/just-the-docs
+
+plugins:
+  - jekyll-remote-theme
 
 url: https://a-rouxel.github.io
 baseurl: /OMNIS-website
