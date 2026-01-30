@@ -1,0 +1,13 @@
+title: OMNIS
+description: Optical Mesoscale Neural Interrogation System
+theme: just-the-docs
+
+url: https://a-rouxel.github.io
+baseurl: /OMNIS-website
+
+search_enabled: true
+color_scheme: light
+
+aux_links:
+  "GitHub":
+    - "https://github.com/a-rouxel/OMNIS-website"
