@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg"
+     viewBox="0 0 960 400"
+     font-family="Calibri, 'Segoe UI', Helvetica, Arial, sans-serif">
+
+  <style>
+    .central   { fill: #2c3e50; stroke: #1a252f; stroke-width: 1.5; }
+    .interface { fill: #3498db; stroke: #2980b9; stroke-width: 1.5; }
+    .subsystem { fill: #ffffff; stroke: #95a5a6; stroke-width: 1.5; }
+    .lbl-lg    { fill: #fff; font-size: 15px; font-weight: 600; text-anchor: middle; }
+    .lbl-sm    { fill: #fff; font-size: 11px; text-anchor: middle; opacity: 0.85; }
+    .sub-lg    { fill: #2c3e50; font-size: 13px; font-weight: 600; text-anchor: middle; }
+    .sub-sm    { fill: #7f8c8d; font-size: 10.5px; text-anchor: middle; }
+    .conn      { stroke: #bdc3c7; stroke-width: 1.5; fill: none; }
+    .sig       { fill: #e67e22; font-size: 9.5px; text-anchor: middle; font-weight: 600; }
+  </style>
+
+  <!-- ======================================= -->
+  <!-- TIER 1: Central Control Unit            -->
+  <!-- ======================================= -->
+  <rect class="central" x="380" y="20" width="200" height="55" rx="8"/>
+  <text class="lbl-lg" x="480" y="44">Control PC</text>
+  <text class="lbl-sm" x="480" y="61">(Python)</text>
+
+  <!-- Lines: Central → Interfaces -->
+  <line class="conn" x1="480" y1="75" x2="190" y2="145"/>
+  <line class="conn" x1="480" y1="75" x2="480" y2="145"/>
+  <line class="conn" x1="480" y1="75" x2="770" y2="145"/>
+
+  <!-- ======================================= -->
+  <!-- TIER 2: Communication Interfaces        -->
+  <!-- ======================================= -->
+  <rect class="interface" x="115" y="145" width="150" height="44" rx="6"/>
+  <text class="lbl-lg" x="190" y="172">DAQ Card</text>
+
+  <rect class="interface" x="435" y="145" width="90" height="44" rx="6"/>
+  <text class="lbl-lg" x="480" y="172">HDMI</text>
+
+  <rect class="interface" x="725" y="145" width="90" height="44" rx="6"/>
+  <text class="lbl-lg" x="770" y="172">USB</text>
+
+  <!-- ======================================= -->
+  <!-- TIER 2 → TIER 3: Tree connectors        -->
+  <!-- ======================================= -->
+
+  <!-- DAQ tree: trunk, horizontal bar, 3 branches -->
+  <line class="conn" x1="190" y1="189" x2="190" y2="240"/>
+  <line class="conn" x1="75"  y1="240" x2="330" y2="240"/>
+  <line class="conn" x1="75"  y1="240" x2="75"  y2="290"/>
+  <line class="conn" x1="200" y1="240" x2="200" y2="290"/>
+  <line class="conn" x1="330" y1="240" x2="330" y2="290"/>
+
+  <!-- HDMI: straight drop -->
+  <line class="conn" x1="480" y1="189" x2="480" y2="290"/>
+
+  <!-- USB tree: trunk, horizontal bar, 2 branches -->
+  <line class="conn" x1="770" y1="189" x2="770" y2="240"/>
+  <line class="conn" x1="700" y1="240" x2="840" y2="240"/>
+  <line class="conn" x1="700" y1="240" x2="700" y2="290"/>
+  <line class="conn" x1="840" y1="240" x2="840" y2="290"/>
+
+  <!-- Signal type labels (DAQ branches) -->
+  <text class="sig" x="75"  y="270">TTL</text>
+  <text class="sig" x="200" y="270">Analog</text>
+  <text class="sig" x="330" y="270">Analog</text>
+
+  <!-- ======================================= -->
+  <!-- TIER 3: Subsystems                      -->
+  <!-- ======================================= -->
+
+  <!-- AOM -->
+  <rect class="subsystem" x="20"  y="290" width="110" height="52" rx="6"/>
+  <text class="sub-lg" x="75"  y="312">AOM</text>
+  <text class="sub-sm" x="75"  y="328">ON / OFF</text>
+
+  <!-- Field Galvos -->
+  <rect class="subsystem" x="135" y="290" width="130" height="52" rx="6"/>
+  <text class="sub-lg" x="200" y="312">Field Galvos</text>
+  <text class="sub-sm" x="200" y="328">X &amp; Y</text>
+
+  <!-- Spiral Galvos -->
+  <rect class="subsystem" x="270" y="290" width="120" height="52" rx="6"/>
+  <text class="sub-lg" x="330" y="312">Spiral Galvos</text>
+  <text class="sub-sm" x="330" y="328">X &amp; Y</text>
+
+  <!-- SLM -->
+  <rect class="subsystem" x="420" y="290" width="120" height="52" rx="6"/>
+  <text class="sub-lg" x="480" y="312">SLM</text>
+  <text class="sub-sm" x="480" y="328">Phase Patterns</text>
+
+  <!-- XYZ Stages -->
+  <rect class="subsystem" x="640" y="290" width="120" height="52" rx="6"/>
+  <text class="sub-lg" x="700" y="312">XYZ Stages</text>
+  <text class="sub-sm" x="700" y="328">3 Axes</text>
+
+  <!-- IM Sensor -->
+  <rect class="subsystem" x="780" y="290" width="120" height="52" rx="6"/>
+  <text class="sub-lg" x="840" y="312">IM Sensor</text>
+  <text class="sub-sm" x="840" y="328">Camera</text>
+
+</svg>
